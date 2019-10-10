@@ -16,4 +16,4 @@ cat wages.csv | cut -d "," -f 1,2,4 | sed 's/,/ /g' | sort -k3,3n | tail -n 10 |
 echo "Effect of Graduating College on Minimum Wage"
 val1=$(cat wages.csv | cut -d "," -f 1,3,4 | sed 's/,/ /g' | sort -k3,3n | sort -n -k3 | grep -w "12" | head -1 | cut -d " " -f 3)
 val2=$(cat wages.csv | cut -d "," -f 1,3,4 | sed 's/,/ /g' | sort -k3,3n | sort -n -k3 | grep -w "16" | head -1 | cut -d " " -f 3)
-echo "$val1 - $val2" | bc
+echo "$val2 - $val1" | bc
